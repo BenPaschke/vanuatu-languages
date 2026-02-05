@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            max-width: 900px;
+            max-width: 1200px; /* Increased max-width for card grid */
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
@@ -19,6 +19,8 @@
             color: #2c3e50;
             margin-bottom: 40px;
         }
+        
+        /* Province Section */
         .province-section {
             background: white;
             border-radius: 8px;
@@ -47,42 +49,62 @@
             font-size: 1.2rem;
             transition: transform 0.3s;
         }
+        
+        /* Content Grid */
         .province-content {
             display: none;
             padding: 20px;
             border-top: 1px solid #eee;
+            background-color: #f8f9fa; /* Slight contrast for grid background */
         }
         .province-content.open {
-            display: block;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive Grid */
+            gap: 20px;
         }
         .province-section.open .province-toggle-icon {
             transform: rotate(180deg);
         }
 
+        /* Language Cards */
         .language-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .language-item:last-child {
-            border-bottom: none;
+        .language-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #b2dfdb;
         }
+        
         .language-name {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #2c3e50;
+            margin-bottom: 5px;
         }
         .language-meta {
             font-size: 0.9em;
-            color: #666;
-            margin-bottom: 8px;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-style: italic;
+            flex-grow: 1; /* Pushes resources to bottom */
         }
+        
+        /* Resources */
         .resources-list {
             list-style: none;
             padding: 0;
-            margin: 10px 0 0 0;
+            margin: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         .resource-link {
             display: inline-flex;
@@ -91,29 +113,25 @@
             background-color: #007bff;
             color: white;
             text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9em;
-            transition: background-color 0.2s;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            border: 1px solid transparent;
         }
         .resource-link:hover {
-            background-color: #0056b3;
             text-decoration: none;
-            color: white;
+            filter: brightness(110%);
+            transform: scale(1.02);
         }
         
         /* Resource Types Colors */
-        .res-audio { background-color: #28a745; }
-        .res-audio:hover { background-color: #218838; }
-        
-        .res-video { background-color: #dc3545; }
-        .res-video:hover { background-color: #c82333; }
-        
-        .res-pdf { background-color: #ffc107; color: #333; }
-        .res-pdf:hover { background-color: #e0a800; color: #333; }
-        
-        .res-app { background-color: #6f42c1; }
-        .res-app:hover { background-color: #5a32a3; }
+        .res-audio { background-color: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+        .res-video { background-color: #ffebee; color: #c62828; border-color: #ffcdd2; }
+        .res-pdf { background-color: #fff8e1; color: #f57f17; border-color: #ffecb3; }
+        .res-app { background-color: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
+        /* Default/External Link remains blue/white or custom below */
+        .res-link { background-color: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
 
         /* Loading state */
         #loading {
@@ -134,14 +152,15 @@
     <script>
         const DATA_URL = 'vanuatu_languages.json';
 
-        // Helper to map resource types to emoji and classes
+        // Helper to map resource types to emoji and styling classes
+        // Updated colors to be subtle pastel backgrounds with dark text for better card aesthetics
         function getResourceConfig(type) {
             switch(type) {
                 case 'audio': return { icon: '🎧', class: 'res-audio' };
                 case 'video': return { icon: '🎬', class: 'res-video' };
                 case 'pdf': return { icon: '📄', class: 'res-pdf' };
                 case 'bible_app': return { icon: '📱', class: 'res-app' };
-                default: return { icon: '🔗', class: '' }; // external_link
+                default: return { icon: '🔗', class: 'res-link' }; // external_link
             }
         }
 
@@ -171,7 +190,7 @@
                 return acc;
             }, {});
 
-            // Sort keys based on the explicit list, putting any unknowns at the end
+            // Sort keys based on the explicit list
             const sortedKeys = Object.keys(grouped).sort((a, b) => {
                 const indexA = provinceOrder.indexOf(a);
                 const indexB = provinceOrder.indexOf(b);
@@ -210,9 +229,6 @@
                     content.classList.toggle('open');
                 };
 
-                // Open NATIONAL by default? Optional. Currently all closed as requested.
-                // if (province === 'NATIONAL') { section.classList.add('open'); content.classList.add('open'); }
-
                 // List Languages
                 grouped[province].forEach(lang => {
                     const langDiv = document.createElement('div');
@@ -224,16 +240,19 @@
                     nameDiv.textContent = lang.language_name;
                     langDiv.appendChild(nameDiv);
 
-                    // Meta
+                    // Meta: Show "Also known as..." but REMOVED Language Code
                     const metaDiv = document.createElement('div');
                     metaDiv.className = 'language-meta';
-                    const parts = [];
-                    if (lang.language_code) parts.push(lang.language_code);
+                    
                     if (lang.other_names && lang.other_names.length > 0) {
-                        parts.push(lang.other_names.join(', '));
+                        metaDiv.textContent = `Also known as: ${lang.other_names.join(', ')}`;
+                    } else {
+                        // If no other names, we can leave it empty or put a spacer
+                        metaDiv.style.marginBottom = '0'; 
                     }
-                    metaDiv.textContent = parts.join(' | ');
-                    langDiv.appendChild(metaDiv);
+                    
+                    // Only append if there is content
+                    if (metaDiv.textContent) langDiv.appendChild(metaDiv);
 
                     // Resources
                     if (lang.resources && lang.resources.length > 0) {
