@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanuatu Bible Resources</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+            /* Vanuatu Flag Gradient Background */
+            background: linear-gradient(180deg, #CE1126 0%, #CE1126 33%, #000000 33%, #000000 37%, #FCD116 37%, #FCD116 63%, #000000 63%, #000000 67%, #009543 67%, #009543 100%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Title Bubble */
+        .title-container {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+        h1 {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: #2c3e50;
+            margin: 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            font-size: 2rem;
+            border: 2px solid white;
+        }
+        .emoji {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            margin: 0 10px;
+        }
+        
+        /* Province Section General Styling */
+        .province-section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .province-header {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            position: relative;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Text shadow for contrast */
+        }
+        .province-header:hover {
+            filter: brightness(95%);
+        }
+        .province-title {
+            margin: 0;
+            font-size: 1.4rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .province-toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            position: absolute;
+            right: 25px;
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4));
+        }
+        
+        /* Content Grid */
+        .province-content {
+            display: none;
+            padding: 25px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .province-content.open {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .province-section.open .province-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Dynamic Color Classes (Injected by JS or defined here) */
+        /* Base styles are applied via inline styles in JS for flexibility, 
+           but we define card styles here */
+
+        /* Language Cards */
+        .language-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .language-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .language-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .language-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+            flex-grow: 1;
+        }
+        
+        /* Resources */
+        .resources-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .resource-link:hover {
+            text-decoration: none;
+            filter: brightness(110%);
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Resource Types Colors */
+        .res-audio { background-color: #2e7d32; }
+        .res-video { background-color: #c62828; }
+        .res-pdf { background-color: #f57f17; }
+        .res-app { background-color: #6a1b9a; }
+        .res-link { background-color: #1565c0; }
+
+        /* Loading state */
+        #loading {
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title-container">
+            <h1><span class="emoji">🇻🇺</span> Vanuatu Bible Resources <span class="emoji">📖</span></h1>
+        </div>
+    
+        <div id="loading">Loading languages...</div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const DATA_URL = 'vanuatu_languages.json';
+
+        // Configuration for Province Colors
+        // [Header Color, Content Background Color (Light Pastel)]
+        const provinceColors = {
+            'NATIONAL': { main: '#002654', pastel: '#e6ebf2' }, // Navy Blue
+            'TORBA':    { main: '#00b2f3', pastel: '#e0f7fe' },
+            'SANMA':    { main: '#d7c100', pastel: '#fcfbe8' }, // Yellow
+            'PENAMA':   { main: '#f99100', pastel: '#fff4e0' }, // Orange
+            'MALAMPA':  { main: '#00b200', pastel: '#e0fae0' }, // Green
+            'SHEFA':    { main: '#ff1a17', pastel: '#ffe8e8' }, // Red
+            'TAFEA':    { main: '#e217ff', pastel: '#fce8ff' }  // Purple
+        };
+        const defaultColor = { main: '#607d8b', pastel: '#eceff1' };
+
+        function getResourceConfig(type) {
+            switch(type) {
+                case 'audio': return { icon: '🎧', class: 'res-audio' };
+                case 'video': return { icon: '🎬', class: 'res-video' };
+                case 'pdf': return { icon: '📄', class: 'res-pdf' };
+                case 'bible_app': return { icon: '📱', class: 'res-app' };
+                default: return { icon: '🔗', class: 'res-link' };
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch(DATA_URL);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const languages = await response.json();
+                renderLanguages(languages);
+            } catch (error) {
+                document.getElementById('loading').textContent = 'Error loading data: ' + error.message;
+            }
+        }
+
+        function renderLanguages(languages) {
+            const contentDiv = document.getElementById('content');
+            const loadingDiv = document.getElementById('loading');
+            
+            // Expected Order
+            const provinceOrder = ['NATIONAL', 'TORBA', 'SANMA', 'PENAMA', 'MALAMPA', 'SHEFA', 'TAFEA'];
+
+            // Group by Province
+            const grouped = languages.reduce((acc, lang) => {
+                const province = lang.province || 'Other';
+                if (!acc[province]) acc[province] = [];
+                acc[province].push(lang);
+                return acc;
+            }, {});
+
+            // Sort keys
+            const sortedKeys = Object.keys(grouped).sort((a, b) => {
+                const indexA = provinceOrder.indexOf(a);
+                const indexB = provinceOrder.indexOf(b);
+                if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+                if (indexA === -1) return 1;
+                if (indexB === -1) return -1;
+                return indexA - indexB;
+            });
+
+            if (sortedKeys.length === 0) {
+                loadingDiv.textContent = 'No languages found.';
+                return;
+            }
+
+            loadingDiv.style.display = 'none';
+
+            sortedKeys.forEach(province => {
+                const section = document.createElement('div');
+                section.className = 'province-section';
+                
+                // Get colors
+                const colors = provinceColors[province] || defaultColor;
+
+                // Header
+                const header = document.createElement('div');
+                header.className = 'province-header';
+                header.style.backgroundColor = colors.main;
+                header.innerHTML = `
+                    <h2 class="province-title">${province}</h2>
+                    <span class="province-toggle-icon">▼</span>
+                `;
+                
+                // Content Container
+                const content = document.createElement('div');
+                content.className = 'province-content';
+                content.style.backgroundColor = colors.pastel;
+
+                // Interaction Logic
+                header.onclick = () => {
+                    const wasOpen = section.classList.contains('open');
+                    
+                    // Close ALL
+                    document.querySelectorAll('.province-section').forEach(el => el.classList.remove('open'));
+                    document.querySelectorAll('.province-content').forEach(el => el.classList.remove('open'));
+                    
+                    if (!wasOpen) {
+                        section.classList.add('open');
+                        content.classList.add('open');
+                        
+                        // Scroll to top of this section with a slight delay to allow rendering
+                        setTimeout(() => {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                };
+
+                // Default Open State (National)
+                if (province === 'NATIONAL') {
+                    section.classList.add('open');
+                    content.classList.add('open');
+                }
+
+                // List Languages
+                grouped[province].forEach(lang => {
+                    const langDiv = document.createElement('div');
+                    langDiv.className = 'language-item';
+
+                    // Name
+                    const nameDiv = document.createElement('div');
+                    nameDiv.className = 'language-name';
+                    nameDiv.textContent = lang.language_name;
+                    langDiv.appendChild(nameDiv);
+
+                    // Meta
+                    const metaDiv = document.createElement('div');
+                    metaDiv.className = 'language-meta';
+                    if (lang.other_names && lang.other_names.length > 0) {
+                        metaDiv.textContent = lang.other_names.join(', ');
+                    } else {
+                        metaDiv.style.marginBottom = '0'; 
+                    }
+                    if (metaDiv.textContent) langDiv.appendChild(metaDiv);
+
+                    // Resources
+                    if (lang.resources && lang.resources.length > 0) {
+                        const resList = document.createElement('ul');
+                        resList.className = 'resources-list';
+                        
+                        lang.resources.forEach(res => {
+                            const config = getResourceConfig(res.type);
+                            
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.href = res.url;
+                            a.target = '_blank';
+                            a.className = `resource-link ${config.class}`;
+                            a.innerHTML = `${config.icon} ${res.title}`;
+                            
+                            li.appendChild(a);
+                            resList.appendChild(li);
+                        });
+                        langDiv.appendChild(resList);
+                    }
+
+                    content.appendChild(langDiv);
+                });
+
+                section.appendChild(header);
+                section.appendChild(content);
+                contentDiv.appendChild(section);
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
