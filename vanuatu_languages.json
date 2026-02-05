@@ -33,7 +33,7 @@
     {
         "language_name": "French",
         "other_names": [
-            "Fran\u00e7ais"
+            "Français"
         ],
         "province": "NATIONAL",
         "language_code": "fra",
@@ -270,6 +270,26 @@
                 "title": "ScriptureEarth",
                 "url": "https://www.scriptureearth.org/00eng.php?idx=1347",
                 "type": "external_link"
+            },
+            {
+                "title": "Bible App",
+                "url": "https://play.google.com/store/apps/details?id=org.scriptureearth.pma.pb.apk&pli=1",
+                "type": "bible_app"
+            },
+            {
+                "title": "Audio",
+                "url": "https://play.google.com/store/apps/details?id=org.scriptureearth.pma.pb.apk&pli=1",
+                "type": "audio"
+            },
+            {
+                "title": "Jesus Film",
+                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
+                "type": "video"
+            },
+            {
+                "title": "Document",
+                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
+                "type": "pdf"
             }
         ]
     },
@@ -294,7 +314,7 @@
         ]
     },
     {
-        "language_name": "V?\u00ebnen Taut",
+        "language_name": "V'ənen Taut",
         "other_names": [
             "Big Nambas"
         ],
