@@ -1,123 +1,116 @@
 [
     {
-        "language_name": "Ambrym, North",
+        "language_name": "Bislama",
         "other_names": [
-            "Magam",
-            "Olal"
+            "Bichelamar"
         ],
-        "province": "MALAMPA",
-        "language_code": "mmg",
+        "province": "NATIONAL",
+        "language_code": "bis",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=2768",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=665",
                 "type": "external_link"
             }
         ]
     },
     {
-        "language_name": "Ambrym, Southeast",
+        "language_name": "English",
         "other_names": [
-            "Endu",
-            "Penapo",
-            "Taveak",
-            "Toak",
-            "Taviak"
+            "Anglais",
+            "Inglis"
         ],
-        "province": "MALAMPA",
-        "language_code": "tvk",
+        "province": "NATIONAL",
+        "language_code": "eng",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=1144",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=231",
                 "type": "external_link"
             }
         ]
     },
     {
-        "language_name": "Maskelynes",
+        "language_name": "French",
         "other_names": [
-            "Kuliviu",
-            "Maskelyne Islands",
-            "Uliveo",
-            "Uluveu",
-            "Maskelyne Islands"
+            "Fran\u00e7ais"
         ],
-        "province": "MALAMPA",
-        "language_code": "klv",
+        "province": "NATIONAL",
+        "language_code": "fra",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=490",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=612",
                 "type": "external_link"
             }
         ]
     },
     {
-        "language_name": "Paama",
+        "language_name": "Mota",
         "other_names": [
-            "Paama-Lopevi",
-            "Paamese",
-            "Pauma",
-            "North Paama",
-            "South Paama"
+            "Maligo",
+            "Veverau",
+            "Ira we nao",
+            "Ira we tak"
         ],
-        "province": "MALAMPA",
-        "language_code": "pma",
+        "province": "TORBA",
+        "language_code": "mtt",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=1347",
-                "type": "external_link"
-            },
-            {
-                "title": "Jesus Film",
-                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
-                "type": "video"
-            },
-            {
-                "title": "Audio resource",
-                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
-                "type": "audio"
-            },
-            {
-                "title": "PDF",
-                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
-                "type": "pdf"
-            }
-        ]
-    },
-    {
-        "language_name": "Uripiv",
-        "other_names": [
-            "Atchin",
-            "Wala-Rano",
-            "Nale",
-            "Uripiv-Wala-Rano-Atchin",
-            "Northeast Malakula",
-            "Tirax"
-        ],
-        "province": "MALAMPA",
-        "language_code": "upv",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=2225",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3118",
                 "type": "external_link"
             }
         ]
     },
     {
-        "language_name": "V'ənen Taut",
+        "language_name": "Mwotlap",
         "other_names": [
-            "Big Nambas"
+            "Dagmel",
+            "Valuwa",
+            "Volow",
+            "Motalava",
+            "Motlav"
         ],
-        "province": "MALAMPA",
-        "language_code": "nmb",
+        "province": "TORBA",
+        "language_code": "mlv",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=3286",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=4050",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tangoa",
+        "other_names": [
+            "Santo",
+            "South Santo"
+        ],
+        "province": "SANMA",
+        "language_code": "tgp",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=608",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tolomako",
+        "other_names": [
+            "Big Bay",
+            "Marina",
+            "Tolomako-Jereviu"
+        ],
+        "province": "SANMA",
+        "language_code": "tlm",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2871",
                 "type": "external_link"
             }
         ]
@@ -208,34 +201,109 @@
         ]
     },
     {
-        "language_name": "Tangoa",
+        "language_name": "Ambrym, North",
         "other_names": [
-            "Santo",
-            "South Santo"
+            "Magam",
+            "Olal"
         ],
-        "province": "SANMA",
-        "language_code": "tgp",
+        "province": "MALAMPA",
+        "language_code": "mmg",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=608",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2768",
                 "type": "external_link"
             }
         ]
     },
     {
-        "language_name": "Tolomako",
+        "language_name": "Ambrym, Southeast",
         "other_names": [
-            "Big Bay",
-            "Marina",
-            "Tolomako-Jereviu"
+            "Endu",
+            "Penapo",
+            "Taveak",
+            "Toak",
+            "Taviak"
         ],
-        "province": "SANMA",
-        "language_code": "tlm",
+        "province": "MALAMPA",
+        "language_code": "tvk",
         "resources": [
             {
                 "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=2871",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1144",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Maskelynes",
+        "other_names": [
+            "Kuliviu",
+            "Maskelyne Islands",
+            "Uliveo",
+            "Uluveu",
+            "Maskelyne Islands"
+        ],
+        "province": "MALAMPA",
+        "language_code": "klv",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=490",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Paama",
+        "other_names": [
+            "Paama-Lopevi",
+            "Paamese",
+            "Pauma",
+            "North Paama",
+            "South Paama"
+        ],
+        "province": "MALAMPA",
+        "language_code": "pma",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1347",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Uripiv",
+        "other_names": [
+            "Atchin",
+            "Wala-Rano",
+            "Nale",
+            "Uripiv-Wala-Rano-Atchin",
+            "Northeast Malakula",
+            "Tirax"
+        ],
+        "province": "MALAMPA",
+        "language_code": "upv",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2225",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "V?\u00ebnen Taut",
+        "other_names": [
+            "Big Nambas"
+        ],
+        "province": "MALAMPA",
+        "language_code": "nmb",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3286",
                 "type": "external_link"
             }
         ]
@@ -498,89 +566,6 @@
             {
                 "title": "ScriptureEarth",
                 "url": "https://www.scriptureearth.org/00eng.php?idx=1443",
-                "type": "external_link"
-            }
-        ]
-    },
-    {
-        "language_name": "Mota",
-        "other_names": [
-            "Maligo",
-            "Veverau",
-            "Ira we nao",
-            "Ira we tak"
-        ],
-        "province": "TORBA",
-        "language_code": "mtt",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=3118",
-                "type": "external_link"
-            }
-        ]
-    },
-    {
-        "language_name": "Mwotlap",
-        "other_names": [
-            "Dagmel",
-            "Valuwa",
-            "Volow",
-            "Motalava",
-            "Motlav"
-        ],
-        "province": "TORBA",
-        "language_code": "mlv",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=4050",
-                "type": "external_link"
-            }
-        ]
-    },
-    {
-        "language_name": "Bislama",
-        "other_names": [
-            "Bichelamar"
-        ],
-        "province": "VANUATU",
-        "language_code": "bis",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=665",
-                "type": "external_link"
-            }
-        ]
-    },
-    {
-        "language_name": "English",
-        "other_names": [
-            "Anglais",
-            "Inglis"
-        ],
-        "province": "VANUATU",
-        "language_code": "eng",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=231",
-                "type": "external_link"
-            }
-        ]
-    },
-    {
-        "language_name": "French",
-        "other_names": [
-            "Français"
-        ],
-        "province": "VANUATU",
-        "language_code": "fra",
-        "resources": [
-            {
-                "title": "ScriptureEarth",
-                "url": "https://www.scriptureearth.org/00eng.php?idx=612",
                 "type": "external_link"
             }
         ]

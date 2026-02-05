@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@
             --border: #ddd;
         }
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
             color: var(--secondary);
             margin: 0;
@@ -44,7 +43,6 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.9rem;
-            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 5px;
@@ -54,34 +52,25 @@
         .btn-secondary { background-color: #6c757d; }
         .btn-success { background-color: #28a745; }
         
-        /* Layout */
         .container {
             display: flex;
             flex: 1;
             gap: 20px;
-            overflow: hidden; /* For scrolling inner panes */
+            overflow: hidden; 
         }
         
-        /* Sidebar List */
+        /* Sidebar */
         .sidebar {
-            width: 300px;
+            width: 320px;
             background: var(--surface);
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .search-box {
-            padding: 10px;
-            border-bottom: 1px solid var(--border);
-        }
-        .search-box input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
+        .search-box { padding: 10px; border-bottom: 1px solid var(--border); }
+        .search-box input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 4px; }
+        
         .lang-list {
             flex: 1;
             overflow-y: auto;
@@ -93,17 +82,16 @@
             padding: 12px 15px;
             border-bottom: 1px solid #eee;
             cursor: pointer;
-            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
         }
         .lang-item:hover { background-color: #f0f0f0; }
-        .lang-item.active {
-            background-color: #e0f2f1;
-            border-left: 4px solid var(--primary);
-        }
-        .lang-item-name { font-weight: bold; display: block; }
-        .lang-item-meta { font-size: 0.8rem; color: #666; }
-
-        /* Main Editor Area */
+        .lang-item.active { background-color: #e0f2f1; border-left: 4px solid var(--primary); }
+        .drag-handle { cursor: move; color: #999; font-size: 1.2rem; }
+        
+        /* Editor */
         .editor {
             flex: 1;
             background: var(--surface);
@@ -111,27 +99,15 @@
             padding: 20px;
             overflow-y: auto;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: none; /* Hidden until selection */
+            display: none;
         }
         .editor.visible { display: block; }
 
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
-        .form-control {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-        textarea.form-control { resize: vertical; min-height: 60px; }
-
-        /* Resources Section */
-        .resources-section {
-            margin-top: 30px;
-            border-top: 2px solid var(--border);
-            padding-top: 20px;
-        }
+        .form-control { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 4px; }
+        
+        /* Resources */
         .resource-card {
             background: #f8f9fa;
             border: 1px solid var(--border);
@@ -139,6 +115,16 @@
             margin-bottom: 10px;
             border-radius: 4px;
             position: relative;
+            padding-left: 40px; /* space for drag handle */
+        }
+        .res-drag-handle {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: move;
+            color: #999;
+            font-size: 1.5rem;
         }
         .resource-remove {
             position: absolute;
@@ -151,19 +137,14 @@
             font-size: 1.2rem;
         }
 
-        /* Notifications */
+        /* Dragging Styles */
+        .dragging { opacity: 0.5; background: #e0e0e0; }
+
         #notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #333;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            display: none;
-            animation: fadeIn 0.3s;
+            position: fixed; bottom: 20px; right: 20px;
+            background: #333; color: white; padding: 10px 20px;
+            border-radius: 4px; display: none; z-index: 1000;
         }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -177,63 +158,54 @@
 </header>
 
 <div class="container">
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search languages..." oninput="filterList()">
+            <input type="text" id="searchInput" placeholder="Search languages..." oninput="renderList()">
         </div>
-        <ul class="lang-list" id="langList">
-            <!-- List items injected here -->
-        </ul>
+        <ul class="lang-list" id="langList"></ul>
         <div style="padding: 10px;">
-            <button class="btn" style="width: 100%" onclick="addNewLanguage()">+ Add New Language</button>
+            <button class="btn" style="width: 100%; justify-content: center;" onclick="addNewLanguage()">+ Add New Language</button>
         </div>
     </div>
 
-    <!-- Editor -->
     <div class="editor" id="editorArea">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <h2>Edit Language</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <h2 style="margin-top: 0;">Edit Language</h2>
             <button class="btn btn-danger" onclick="deleteCurrentLanguage()">Delete Language</button>
         </div>
         
-        <form id="langForm" oninput="markDirty()">
+        <form>
             <div class="form-group">
                 <label>Language Name</label>
-                <input type="text" class="form-control" id="f_name">
+                <input type="text" class="form-control" id="f_name" oninput="saveField('language_name', this.value)">
             </div>
-            
             <div class="form-group">
                 <label>Province</label>
-                <input type="text" class="form-control" id="f_province" list="provinceList">
-                <datalist id="provinceList">
-                    <option value="MALAMPA">
-                    <option value="PENAMA">
-                    <option value="SANMA">
-                    <option value="SHEFA">
-                    <option value="TAFEA">
-                    <option value="TORBA">
-                </datalist>
+                <select class="form-control" id="f_province" onchange="saveField('province', this.value)">
+                    <option value="NATIONAL">NATIONAL</option>
+                    <option value="TORBA">TORBA</option>
+                    <option value="SANMA">SANMA</option>
+                    <option value="PENAMA">PENAMA</option>
+                    <option value="MALAMPA">MALAMPA</option>
+                    <option value="SHEFA">SHEFA</option>
+                    <option value="TAFEA">TAFEA</option>
+                </select>
             </div>
-
             <div class="form-group">
-                <label>Language Code (ISO)</label>
-                <input type="text" class="form-control" id="f_code">
+                <label>Language Code</label>
+                <input type="text" class="form-control" id="f_code" oninput="saveField('language_code', this.value)">
             </div>
-
             <div class="form-group">
                 <label>Other Names (comma separated)</label>
-                <textarea class="form-control" id="f_other"></textarea>
+                <textarea class="form-control" id="f_other" oninput="saveOtherNames(this.value)"></textarea>
             </div>
 
-            <div class="resources-section">
+            <div style="margin-top: 30px; border-top: 2px solid var(--border); padding-top: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                    <h3>Resources</h3>
+                    <h3 style="margin: 0;">Resources</h3>
                     <button type="button" class="btn btn-secondary" onclick="addResource()">+ Add Resource</button>
                 </div>
-                <div id="resourceList">
-                    <!-- Resources injected here -->
-                </div>
+                <div id="resourceList"></div>
             </div>
         </form>
     </div>
@@ -244,31 +216,25 @@
 <script>
     let languages = [];
     let currentIndex = -1;
-    const DATA_URL = 'vanuatu_languages.json';
+    let dragSrcEl = null;
 
-    // --- Core Data Functions ---
-
+    // --- Data Loading ---
     async function loadData() {
         try {
-            const response = await fetch(DATA_URL);
-            if (!response.ok) throw new Error("Failed to load");
+            const response = await fetch('vanuatu_languages.json');
             languages = await response.json();
             renderList();
-            showNotification('Data loaded successfully');
+            showNotification('Data loaded');
         } catch (e) {
             console.error(e);
-            showNotification('Error loading data. Ensure JSON file exists.', true);
+            showNotification('Error loading data', true);
         }
     }
 
     function downloadJSON() {
-        // Save current edits from form to state before downloading
-        if (currentIndex !== -1) saveCurrentToState();
-
         const dataStr = JSON.stringify(languages, null, 4);
         const blob = new Blob([dataStr], {type: "application/json"});
         const url = URL.createObjectURL(blob);
-        
         const a = document.createElement('a');
         a.href = url;
         a.download = "vanuatu_languages.json";
@@ -276,179 +242,204 @@
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        
-        showNotification('File downloaded! Now upload it to GitHub.');
     }
 
-    // --- UI Rendering ---
-
+    // --- Rendering ---
     function renderList() {
         const list = document.getElementById('langList');
         const search = document.getElementById('searchInput').value.toLowerCase();
         list.innerHTML = '';
 
         languages.forEach((lang, index) => {
-            // Filter logic
-            const matchName = lang.language_name.toLowerCase().includes(search);
-            const matchCode = (lang.language_code || '').toLowerCase().includes(search);
-            const matchProv = (lang.province || '').toLowerCase().includes(search);
-            
-            if (!matchName && !matchCode && !matchProv) return;
+            const match = (lang.language_name||'').toLowerCase().includes(search) || 
+                          (lang.province||'').toLowerCase().includes(search);
+            if (!match) return;
 
             const li = document.createElement('li');
             li.className = `lang-item ${index === currentIndex ? 'active' : ''}`;
-            li.onclick = () => selectLanguage(index);
+            li.draggable = true; // Enable Drag
+            li.dataset.index = index;
+            
             li.innerHTML = `
-                <span class="lang-item-name">${lang.language_name}</span>
-                <span class="lang-item-meta">${lang.province} | ${lang.language_code}</span>
+                <span class="drag-handle">☰</span>
+                <div>
+                    <span style="font-weight:bold; display:block;">${lang.language_name}</span>
+                    <span style="font-size:0.8rem; color:#666;">${lang.province}</span>
+                </div>
             `;
+            
+            // Click to select
+            li.onclick = (e) => {
+                // Don't select if clicking drag handle
+                if(e.target.classList.contains('drag-handle')) return;
+                selectLanguage(index);
+            };
+
+            // Drag Events
+            li.addEventListener('dragstart', handleDragStart);
+            li.addEventListener('dragover', handleDragOver);
+            li.addEventListener('drop', handleDropLanguage);
+            li.addEventListener('dragend', handleDragEnd);
+
             list.appendChild(li);
         });
     }
 
     function selectLanguage(index) {
-        // Save previous if switching
-        if (currentIndex !== -1) saveCurrentToState();
-
         currentIndex = index;
-        renderList(); // Update active class
-        
-        const lang = languages[index];
+        renderList(); 
         document.getElementById('editorArea').classList.add('visible');
         
-        // Populate Form
+        const lang = languages[index];
         document.getElementById('f_name').value = lang.language_name || '';
-        document.getElementById('f_province').value = lang.province || '';
+        document.getElementById('f_province').value = lang.province || 'NATIONAL';
         document.getElementById('f_code').value = lang.language_code || '';
         document.getElementById('f_other').value = (lang.other_names || []).join(', ');
-
-        renderResources(lang.resources || []);
+        
+        renderResources();
     }
 
-    function renderResources(resources) {
+    function renderResources() {
         const container = document.getElementById('resourceList');
         container.innerHTML = '';
+        const resList = languages[currentIndex].resources || [];
 
-        resources.forEach((res, i) => {
+        resList.forEach((res, i) => {
             const div = document.createElement('div');
             div.className = 'resource-card';
+            div.draggable = true;
+            div.dataset.index = i;
+
             div.innerHTML = `
+                <div class="res-drag-handle">☰</div>
                 <button type="button" class="resource-remove" onclick="removeResource(${i})">&times;</button>
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control res-title" value="${res.title || ''}">
+                    <input type="text" class="form-control" value="${res.title}" oninput="updateResource(${i}, 'title', this.value)">
                 </div>
                 <div class="form-group">
                     <label>URL</label>
-                    <input type="text" class="form-control res-url" value="${res.url || ''}">
+                    <input type="text" class="form-control" value="${res.url}" oninput="updateResource(${i}, 'url', this.value)">
                 </div>
                 <div class="form-group">
                     <label>Type</label>
-                    <select class="form-control res-type">
-                        <option value="external_link" ${res.type === 'external_link' ? 'selected' : ''}>External Link</option>
-                        <option value="audio" ${res.type === 'audio' ? 'selected' : ''}>Audio</option>
-                        <option value="video" ${res.type === 'video' ? 'selected' : ''}>Video</option>
-                        <option value="pdf" ${res.type === 'pdf' ? 'selected' : ''}>PDF</option>
+                    <select class="form-control" onchange="updateResource(${i}, 'type', this.value)">
+                        <option value="external_link" ${res.type === 'external_link' ? 'selected' : ''}>External Link 🔗</option>
+                        <option value="audio" ${res.type === 'audio' ? 'selected' : ''}>Audio 🎧</option>
+                        <option value="video" ${res.type === 'video' ? 'selected' : ''}>Video 🎬</option>
+                        <option value="pdf" ${res.type === 'pdf' ? 'selected' : ''}>PDF 📄</option>
+                        <option value="bible_app" ${res.type === 'bible_app' ? 'selected' : ''}>Bible App 📱</option>
                     </select>
                 </div>
             `;
+
+            div.addEventListener('dragstart', handleResDragStart);
+            div.addEventListener('dragover', handleDragOver);
+            div.addEventListener('drop', handleDropResource);
+            div.addEventListener('dragend', handleDragEnd);
+
             container.appendChild(div);
         });
     }
 
-    // --- Actions ---
-
-    function saveCurrentToState() {
-        if (currentIndex === -1) return;
-
-        const name = document.getElementById('f_name').value;
-        const province = document.getElementById('f_province').value;
-        const code = document.getElementById('f_code').value;
-        const otherStr = document.getElementById('f_other').value;
-        
-        // Parse other names
-        const otherNames = otherStr.split(',').map(s => s.trim()).filter(s => s);
-
-        // Parse Resources
-        const resCards = document.querySelectorAll('.resource-card');
-        const resources = Array.from(resCards).map(card => ({
-            title: card.querySelector('.res-title').value,
-            url: card.querySelector('.res-url').value,
-            type: card.querySelector('.res-type').value
-        }));
-
-        languages[currentIndex] = {
-            ...languages[currentIndex],
-            language_name: name,
-            province: province,
-            language_code: code,
-            other_names: otherNames,
-            resources: resources
-        };
-        
-        // Refresh list to show name changes
-        renderList();
+    // --- Updates ---
+    function saveField(field, val) {
+        if(currentIndex === -1) return;
+        languages[currentIndex][field] = val;
+        if(field === 'language_name' || field === 'province') renderList();
     }
-
-    function addNewLanguage() {
-        if (currentIndex !== -1) saveCurrentToState();
-        
-        const newLang = {
-            language_name: "New Language",
-            province: "SHEFA",
-            language_code: "",
-            other_names: [],
-            resources: []
-        };
-        
-        languages.unshift(newLang); // Add to top
-        selectLanguage(0);
-        document.getElementById('searchInput').value = ''; // Clear search to show new item
-        renderList();
+    function saveOtherNames(val) {
+        if(currentIndex === -1) return;
+        languages[currentIndex].other_names = val.split(',').map(s=>s.trim()).filter(s=>s);
     }
-
-    function deleteCurrentLanguage() {
-        if (!confirm("Are you sure you want to delete this language?")) return;
-        
-        languages.splice(currentIndex, 1);
-        currentIndex = -1;
-        document.getElementById('editorArea').classList.remove('visible');
-        renderList();
-        showNotification('Language deleted');
+    function updateResource(i, field, val) {
+        languages[currentIndex].resources[i][field] = val;
     }
-
     function addResource() {
-        // We append a DOM element directly, but better to save state and re-render
-        saveCurrentToState();
-        languages[currentIndex].resources.push({ title: "", url: "", type: "external_link" });
-        renderResources(languages[currentIndex].resources);
+        if(!languages[currentIndex].resources) languages[currentIndex].resources = [];
+        languages[currentIndex].resources.push({title: 'New Resource', url: '', type: 'external_link'});
+        renderResources();
+    }
+    function removeResource(i) {
+        languages[currentIndex].resources.splice(i, 1);
+        renderResources();
+    }
+    function deleteCurrentLanguage() {
+        if(confirm('Delete this language?')) {
+            languages.splice(currentIndex, 1);
+            currentIndex = -1;
+            document.getElementById('editorArea').classList.remove('visible');
+            renderList();
+        }
+    }
+    function addNewLanguage() {
+        languages.unshift({language_name: "New Language", province: "NATIONAL", resources: []});
+        selectLanguage(0);
     }
 
-    function removeResource(resIndex) {
-        saveCurrentToState(); // Save text inputs first
-        languages[currentIndex].resources.splice(resIndex, 1);
-        renderResources(languages[currentIndex].resources);
-    }
-
-    function filterList() {
-        renderList();
+    // --- Drag and Drop Logic ---
+    function handleDragStart(e) {
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        this.classList.add('dragging');
     }
     
-    function markDirty() {
-        // Optional: enable save button styling
+    function handleResDragStart(e) {
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        this.classList.add('dragging');
+        e.stopPropagation(); // Prevent bubbling to language item
     }
 
-    function showNotification(msg, isError = false) {
+    function handleDragOver(e) {
+        if (e.preventDefault) e.preventDefault();
+        return false;
+    }
+
+    function handleDropLanguage(e) {
+        e.stopPropagation();
+        if (dragSrcEl !== this && dragSrcEl.classList.contains('lang-item')) {
+            const oldIdx = parseInt(dragSrcEl.dataset.index);
+            const newIdx = parseInt(this.dataset.index);
+            
+            // Move item
+            const item = languages.splice(oldIdx, 1)[0];
+            languages.splice(newIdx, 0, item);
+            
+            // Update selection index if needed
+            if(currentIndex === oldIdx) currentIndex = newIdx;
+            
+            renderList();
+        }
+    }
+
+    function handleDropResource(e) {
+        e.stopPropagation();
+        if (dragSrcEl !== this && dragSrcEl.classList.contains('resource-card')) {
+            const oldIdx = parseInt(dragSrcEl.dataset.index);
+            const newIdx = parseInt(this.dataset.index);
+            
+            const resList = languages[currentIndex].resources;
+            const item = resList.splice(oldIdx, 1)[0];
+            resList.splice(newIdx, 0, item);
+            
+            renderResources();
+        }
+    }
+
+    function handleDragEnd(e) {
+        this.classList.remove('dragging');
+    }
+
+    function showNotification(msg, isError) {
         const n = document.getElementById('notification');
         n.textContent = msg;
         n.style.background = isError ? '#dc3545' : '#333';
         n.style.display = 'block';
-        setTimeout(() => { n.style.display = 'none'; }, 3000);
+        setTimeout(() => n.style.display = 'none', 2000);
     }
 
-    // Init
     loadData();
-
 </script>
 
 </body>
