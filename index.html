@@ -19,6 +19,10 @@
             color: #2c3e50;
             margin-bottom: 40px;
         }
+        .emoji {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            margin: 0 10px;
+        }
         
         /* Province Section */
         .province-section {
@@ -27,6 +31,7 @@
             margin-bottom: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             overflow: hidden;
+            transition: transform 0.5s;
         }
         .province-header {
             background-color: #009688;
@@ -130,11 +135,11 @@
         }
         
         /* Resource Types Colors */
-        .res-audio { background-color: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
-        .res-video { background-color: #ffebee; color: #c62828; border-color: #ffcdd2; }
-        .res-pdf { background-color: #fff8e1; color: #f57f17; border-color: #ffecb3; }
-        .res-app { background-color: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
-        .res-link { background-color: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
+        .res-audio { background-color: #2e7d32; }
+        .res-video { background-color: #c62828; }
+        .res-pdf { background-color: #f57f17; }
+        .res-app { background-color: #6a1b9a; }
+        .res-link { background-color: #1565c0; }
 
         /* Loading state */
         #loading {
@@ -147,7 +152,7 @@
 </head>
 <body>
 
-    <h1>Vanuatu Bible Resources</h1>
+    <h1><span class="emoji">🇻🇺</span> Vanuatu Bible Resources</h1>
 
     <div id="loading">Loading languages...</div>
     <div id="content"></div>
@@ -236,6 +241,11 @@
                     if (!wasOpen) {
                         section.classList.add('open');
                         content.classList.add('open');
+                                                
+                        // Scroll to top of this section with a slight delay to allow rendering
+                        setTimeout(() => {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
                     }
                 };
 
