@@ -1,583 +1,588 @@
 [
-  {
-    "language_name": "Ambrym, North",
-    "other_names": [
-      "Magam",
-      "Olal"
-    ],
-    "province": "MALAMPA",
-    "language_code": "mmg",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2768",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Ambrym, Southeast",
-    "other_names": [
-      "Endu",
-      "Penapo",
-      "Taveak",
-      "Toak",
-      "Taviak"
-    ],
-    "province": "MALAMPA",
-    "language_code": "tvk",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=1144",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Maskelynes",
-    "other_names": [
-      "Kuliviu",
-      "Maskelyne Islands",
-      "Uliveo",
-      "Uluveu",
-      "Maskelyne Islands"
-    ],
-    "province": "MALAMPA",
-    "language_code": "klv",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=490",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Paama",
-    "other_names": [
-      "Paama-Lopevi",
-      "Paamese",
-      "Pauma",
-      "North Paama",
-      "South Paama"
-    ],
-    "province": "MALAMPA",
-    "language_code": "pma",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=1347",
-        "type": "external_link"
-      },
-      {
-        "title": "Jesus Film",
-        "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
-        "type": "video"
-      },
-      {
-        "title": "Audio resource",
-        "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
-        "type": "audio"
-      }
-    ]
-  },
-  {
-    "language_name": "Uripiv",
-    "other_names": [
-      "Atchin",
-      "Wala-Rano",
-      "Nale",
-      "Uripiv-Wala-Rano-Atchin",
-      "Northeast Malakula",
-      "Tirax"
-    ],
-    "province": "MALAMPA",
-    "language_code": "upv",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2225",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "V'ənen Taut",
-    "other_names": [
-      "Big Nambas"
-    ],
-    "province": "MALAMPA",
-    "language_code": "nmb",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=3286",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Ambae, East",
-    "other_names": [
-      "Lolokaro",
-      "Lolovoli",
-      "Lombaha",
-      "Longana",
-      "Lobaha",
-      "Lolokara",
-      "Lolsiwoi",
-      "Aoba",
-      "Northeast Ambae",
-      "Northeast Aoba",
-      "Oba",
-      "Omba",
-      "Walurigi"
-    ],
-    "province": "PENAMA",
-    "language_code": "omb",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2575",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Ambae, West",
-    "other_names": [
-      "Nduindui",
-      "Walaha",
-      "Duindui",
-      "Duidui",
-      "Opa"
-    ],
-    "province": "PENAMA",
-    "language_code": "nnd",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2837",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Apma",
-    "other_names": [],
-    "province": "PENAMA",
-    "language_code": "app",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=3891",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Hano",
-    "other_names": [
-      "Nggasai",
-      "Kasai",
-      "Bwatvenua",
-      "Lamalanga",
-      "Loltong",
-      "Nonda",
-      "North Pentecost Language",
-      "North Raga",
-      "Qatvenua",
-      "Raga",
-      "Raxa",
-      "Vunmarama"
-    ],
-    "province": "PENAMA",
-    "language_code": "lml",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2739",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Tangoa",
-    "other_names": [
-      "Santo",
-      "South Santo"
-    ],
-    "province": "SANMA",
-    "language_code": "tgp",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=608",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Tolomako",
-    "other_names": [
-      "Big Bay",
-      "Marina",
-      "Tolomako-Jereviu"
-    ],
-    "province": "SANMA",
-    "language_code": "tlm",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2871",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Baki",
-    "other_names": [
-      "Burumba",
-      "Paki"
-    ],
-    "province": "SHEFA",
-    "language_code": "bki",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2565",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Eton",
-    "other_names": [
-      "Eton",
-      "Pang Pang",
-      "Eastern Efate",
-      "Epwau"
-    ],
-    "province": "SHEFA",
-    "language_code": "etn",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=3100",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Lewo",
-    "other_names": [
-      "Mate-Nul-Filakara",
-      "Tasiko",
-      "Varsu"
-    ],
-    "province": "SHEFA",
-    "language_code": "lww",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2257",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Mele-Fila",
-    "other_names": [
-      "Fila",
-      "Mele",
-      "Efira",
-      "Fira",
-      "Ifira",
-      "Fila-Mele",
-      "Ifara-Mele",
-      "Ifira-Mele"
-    ],
-    "province": "SHEFA",
-    "language_code": "mxe",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2692",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Nguna",
-    "other_names": [
-      "Buninga",
-      "Emau",
-      "Livara",
-      "Nguna",
-      "Paunangis",
-      "Sesake",
-      "Guna",
-      "Ngunese",
-      "Tongoa",
-      "Nakanamanga"
-    ],
-    "province": "SHEFA",
-    "language_code": "llp",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2760",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Aneityum",
-    "other_names": [
-      "Aneiteum",
-      "Aneiteumese",
-      "Anejom",
-      "Anejom?",
-      "Antas Anejom?",
-      "Intas Anejom"
-    ],
-    "province": "TAFEA",
-    "language_code": "aty",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2823",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Futuna-Aniwa",
-    "other_names": [
-      "Aniwa",
-      "West Futuna",
-      "Anewa",
-      "Fotuna",
-      "Erronan",
-      "West Futuna-Aniwa"
-    ],
-    "province": "TAFEA",
-    "language_code": "fut",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2835",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Kwamera",
-    "other_names": [
-      "Nafe",
-      "Neninafe",
-      "Southeast Tanna"
-    ],
-    "province": "TAFEA",
-    "language_code": "tnk",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=1085",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Lenakel",
-    "other_names": [
-      "Ikyoo",
-      "Itonga",
-      "Loanatit",
-      "Nerauya",
-      "Tanna"
-    ],
-    "province": "TAFEA",
-    "language_code": "tnl",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=3298",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Sie",
-    "other_names": [
-      "Potnariven",
-      "Sie",
-      "Yoku",
-      "Enyau",
-      "Sorung",
-      "Eromanga",
-      "Erramanga",
-      "Erromanga",
-      "Erromangan",
-      "Sye",
-      "nam Eromaga"
-    ],
-    "province": "TAFEA",
-    "language_code": "erg",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=2865",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Tanna, North",
-    "other_names": [
-      "East Tanna",
-      "Imafin",
-      "West Tanna",
-      "N?n-naka"
-    ],
-    "province": "TAFEA",
-    "language_code": "tnn",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=1139",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Tanna, Southwest",
-    "other_names": [
-      "Nivhaar",
-      "Nafe",
-      "Naha",
-      "Nvhal",
-      "Yahurmene",
-      "Narpaimene",
-      "Nowai",
-      "Siporo",
-      "Vaha",
-      "Naha",
-      "Nvhal",
-      "Yahurmene"
-    ],
-    "province": "TAFEA",
-    "language_code": "nwi",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=559",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Whitesands",
-    "other_names": [
-      "N?rak",
-      "Lometimeti",
-      "Weasisi",
-      "Wassisi",
-      "Napuanmen",
-      "Whitsands"
-    ],
-    "province": "TAFEA",
-    "language_code": "tnp",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=1443",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Mota",
-    "other_names": [
-      "Maligo",
-      "Veverau",
-      "Ira we nao",
-      "Ira we tak"
-    ],
-    "province": "TORBA",
-    "language_code": "mtt",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=3118",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Mwotlap",
-    "other_names": [
-      "Dagmel",
-      "Valuwa",
-      "Volow",
-      "Motalava",
-      "Motlav"
-    ],
-    "province": "TORBA",
-    "language_code": "mlv",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=4050",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "Bislama",
-    "other_names": [
-      "Bichelamar"
-    ],
-    "province": "VANUATU",
-    "language_code": "bis",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=665",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "English",
-    "other_names": [
-      "Anglais",
-      "Inglis"
-    ],
-    "province": "VANUATU",
-    "language_code": "eng",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=231",
-        "type": "external_link"
-      }
-    ]
-  },
-  {
-    "language_name": "French",
-    "other_names": [
-      "Français"
-    ],
-    "province": "VANUATU",
-    "language_code": "fra",
-    "resources": [
-      {
-        "title": "ScriptureEarth",
-        "url": "https://www.scriptureearth.org/00eng.php?idx=612",
-        "type": "external_link"
-      }
-    ]
-  }
+    {
+        "language_name": "Ambrym, North",
+        "other_names": [
+            "Magam",
+            "Olal"
+        ],
+        "province": "MALAMPA",
+        "language_code": "mmg",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2768",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Ambrym, Southeast",
+        "other_names": [
+            "Endu",
+            "Penapo",
+            "Taveak",
+            "Toak",
+            "Taviak"
+        ],
+        "province": "MALAMPA",
+        "language_code": "tvk",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1144",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Maskelynes",
+        "other_names": [
+            "Kuliviu",
+            "Maskelyne Islands",
+            "Uliveo",
+            "Uluveu",
+            "Maskelyne Islands"
+        ],
+        "province": "MALAMPA",
+        "language_code": "klv",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=490",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Paama",
+        "other_names": [
+            "Paama-Lopevi",
+            "Paamese",
+            "Pauma",
+            "North Paama",
+            "South Paama"
+        ],
+        "province": "MALAMPA",
+        "language_code": "pma",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1347",
+                "type": "external_link"
+            },
+            {
+                "title": "Jesus Film",
+                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
+                "type": "video"
+            },
+            {
+                "title": "Audio resource",
+                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
+                "type": "audio"
+            },
+            {
+                "title": "PDF",
+                "url": "http://www.jesusfilm.org/watch/jesus.html/paama.html",
+                "type": "pdf"
+            }
+        ]
+    },
+    {
+        "language_name": "Uripiv",
+        "other_names": [
+            "Atchin",
+            "Wala-Rano",
+            "Nale",
+            "Uripiv-Wala-Rano-Atchin",
+            "Northeast Malakula",
+            "Tirax"
+        ],
+        "province": "MALAMPA",
+        "language_code": "upv",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2225",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "V'ənen Taut",
+        "other_names": [
+            "Big Nambas"
+        ],
+        "province": "MALAMPA",
+        "language_code": "nmb",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3286",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Ambae, East",
+        "other_names": [
+            "Lolokaro",
+            "Lolovoli",
+            "Lombaha",
+            "Longana",
+            "Lobaha",
+            "Lolokara",
+            "Lolsiwoi",
+            "Aoba",
+            "Northeast Ambae",
+            "Northeast Aoba",
+            "Oba",
+            "Omba",
+            "Walurigi"
+        ],
+        "province": "PENAMA",
+        "language_code": "omb",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2575",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Ambae, West",
+        "other_names": [
+            "Nduindui",
+            "Walaha",
+            "Duindui",
+            "Duidui",
+            "Opa"
+        ],
+        "province": "PENAMA",
+        "language_code": "nnd",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2837",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Apma",
+        "other_names": [],
+        "province": "PENAMA",
+        "language_code": "app",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3891",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Hano",
+        "other_names": [
+            "Nggasai",
+            "Kasai",
+            "Bwatvenua",
+            "Lamalanga",
+            "Loltong",
+            "Nonda",
+            "North Pentecost Language",
+            "North Raga",
+            "Qatvenua",
+            "Raga",
+            "Raxa",
+            "Vunmarama"
+        ],
+        "province": "PENAMA",
+        "language_code": "lml",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2739",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tangoa",
+        "other_names": [
+            "Santo",
+            "South Santo"
+        ],
+        "province": "SANMA",
+        "language_code": "tgp",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=608",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tolomako",
+        "other_names": [
+            "Big Bay",
+            "Marina",
+            "Tolomako-Jereviu"
+        ],
+        "province": "SANMA",
+        "language_code": "tlm",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2871",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Baki",
+        "other_names": [
+            "Burumba",
+            "Paki"
+        ],
+        "province": "SHEFA",
+        "language_code": "bki",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2565",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Eton",
+        "other_names": [
+            "Eton",
+            "Pang Pang",
+            "Eastern Efate",
+            "Epwau"
+        ],
+        "province": "SHEFA",
+        "language_code": "etn",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3100",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Lewo",
+        "other_names": [
+            "Mate-Nul-Filakara",
+            "Tasiko",
+            "Varsu"
+        ],
+        "province": "SHEFA",
+        "language_code": "lww",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2257",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Mele-Fila",
+        "other_names": [
+            "Fila",
+            "Mele",
+            "Efira",
+            "Fira",
+            "Ifira",
+            "Fila-Mele",
+            "Ifara-Mele",
+            "Ifira-Mele"
+        ],
+        "province": "SHEFA",
+        "language_code": "mxe",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2692",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Nguna",
+        "other_names": [
+            "Buninga",
+            "Emau",
+            "Livara",
+            "Nguna",
+            "Paunangis",
+            "Sesake",
+            "Guna",
+            "Ngunese",
+            "Tongoa",
+            "Nakanamanga"
+        ],
+        "province": "SHEFA",
+        "language_code": "llp",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2760",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Aneityum",
+        "other_names": [
+            "Aneiteum",
+            "Aneiteumese",
+            "Anejom",
+            "Anejom?",
+            "Antas Anejom?",
+            "Intas Anejom"
+        ],
+        "province": "TAFEA",
+        "language_code": "aty",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2823",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Futuna-Aniwa",
+        "other_names": [
+            "Aniwa",
+            "West Futuna",
+            "Anewa",
+            "Fotuna",
+            "Erronan",
+            "West Futuna-Aniwa"
+        ],
+        "province": "TAFEA",
+        "language_code": "fut",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2835",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Kwamera",
+        "other_names": [
+            "Nafe",
+            "Neninafe",
+            "Southeast Tanna"
+        ],
+        "province": "TAFEA",
+        "language_code": "tnk",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1085",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Lenakel",
+        "other_names": [
+            "Ikyoo",
+            "Itonga",
+            "Loanatit",
+            "Nerauya",
+            "Tanna"
+        ],
+        "province": "TAFEA",
+        "language_code": "tnl",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3298",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Sie",
+        "other_names": [
+            "Potnariven",
+            "Sie",
+            "Yoku",
+            "Enyau",
+            "Sorung",
+            "Eromanga",
+            "Erramanga",
+            "Erromanga",
+            "Erromangan",
+            "Sye",
+            "nam Eromaga"
+        ],
+        "province": "TAFEA",
+        "language_code": "erg",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=2865",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tanna, North",
+        "other_names": [
+            "East Tanna",
+            "Imafin",
+            "West Tanna",
+            "N?n-naka"
+        ],
+        "province": "TAFEA",
+        "language_code": "tnn",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1139",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Tanna, Southwest",
+        "other_names": [
+            "Nivhaar",
+            "Nafe",
+            "Naha",
+            "Nvhal",
+            "Yahurmene",
+            "Narpaimene",
+            "Nowai",
+            "Siporo",
+            "Vaha",
+            "Naha",
+            "Nvhal",
+            "Yahurmene"
+        ],
+        "province": "TAFEA",
+        "language_code": "nwi",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=559",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Whitesands",
+        "other_names": [
+            "N?rak",
+            "Lometimeti",
+            "Weasisi",
+            "Wassisi",
+            "Napuanmen",
+            "Whitsands"
+        ],
+        "province": "TAFEA",
+        "language_code": "tnp",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=1443",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Mota",
+        "other_names": [
+            "Maligo",
+            "Veverau",
+            "Ira we nao",
+            "Ira we tak"
+        ],
+        "province": "TORBA",
+        "language_code": "mtt",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=3118",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Mwotlap",
+        "other_names": [
+            "Dagmel",
+            "Valuwa",
+            "Volow",
+            "Motalava",
+            "Motlav"
+        ],
+        "province": "TORBA",
+        "language_code": "mlv",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=4050",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "Bislama",
+        "other_names": [
+            "Bichelamar"
+        ],
+        "province": "VANUATU",
+        "language_code": "bis",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=665",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "English",
+        "other_names": [
+            "Anglais",
+            "Inglis"
+        ],
+        "province": "VANUATU",
+        "language_code": "eng",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=231",
+                "type": "external_link"
+            }
+        ]
+    },
+    {
+        "language_name": "French",
+        "other_names": [
+            "Français"
+        ],
+        "province": "VANUATU",
+        "language_code": "fra",
+        "resources": [
+            {
+                "title": "ScriptureEarth",
+                "url": "https://www.scriptureearth.org/00eng.php?idx=612",
+                "type": "external_link"
+            }
+        ]
+    }
 ]
